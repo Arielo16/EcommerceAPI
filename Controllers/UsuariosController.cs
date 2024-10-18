@@ -40,11 +40,21 @@ namespace EcommerceAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<UsuarioDTO>> PostUsuario(UsuarioDTO usuarioDto)
         {
-            var usuario = new Usuario { Nombre = usuarioDto.Nombre, Email = usuarioDto.Email };
+            if (usuarioDto.Id == 0 || _context.Usuarios.Any(u => u.Id == usuarioDto.Id))
+            {
+                return BadRequest("ID inválido o ya existente.");
+            }
+
+            var usuario = new Usuario 
+            { 
+                Id = usuarioDto.Id, 
+                Nombre = usuarioDto.Nombre, 
+                Email = usuarioDto.Email 
+            };
+
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
 
-            usuarioDto.Id = usuario.Id;
             return CreatedAtAction(nameof(GetUsuario), new { id = usuario.Id }, usuarioDto);
         }
 

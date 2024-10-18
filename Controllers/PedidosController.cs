@@ -50,7 +50,11 @@ namespace EcommerceAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<PedidoDTO>> PostPedido(PedidoDTO pedidoDto)
         {
-            // Verificar si todos los productos existen
+            if (pedidoDto.Id == 0 || _context.Pedidos.Any(p => p.Id == pedidoDto.Id))
+            {
+                return BadRequest("ID inválido o ya existente.");
+            }
+
             foreach (var productoId in pedidoDto.ProductosIds)
             {
                 if (!await _context.Productos.AnyAsync(p => p.Id == productoId))
@@ -61,6 +65,7 @@ namespace EcommerceAPI.Controllers
 
             var pedido = new Pedido
             {
+                Id = pedidoDto.Id, 
                 UsuarioId = pedidoDto.UsuarioId,
                 ProductosIds = pedidoDto.ProductosIds
             };
@@ -68,7 +73,6 @@ namespace EcommerceAPI.Controllers
             _context.Pedidos.Add(pedido);
             await _context.SaveChangesAsync();
 
-            pedidoDto.Id = pedido.Id;
             return CreatedAtAction(nameof(GetPedido), new { id = pedido.Id }, pedidoDto);
         }
 
@@ -80,7 +84,6 @@ namespace EcommerceAPI.Controllers
             var pedido = await _context.Pedidos.FindAsync(id);
             if (pedido == null) return NotFound();
 
-            // Verificar si todos los productos existen
             foreach (var productoId in pedidoDto.ProductosIds)
             {
                 if (!await _context.Productos.AnyAsync(p => p.Id == productoId))
