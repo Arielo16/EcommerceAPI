@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/joselomart/EcommerceAPI/EcommerceAPI.csproj": {}
+    "/home/joselomart/Documentos/GitHub/EcommerceAPI/EcommerceAPI.csproj": {}
   },
   "projects": {
-    "/home/joselomart/EcommerceAPI/EcommerceAPI.csproj": {
+    "/home/joselomart/Documentos/GitHub/EcommerceAPI/EcommerceAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/joselomart/EcommerceAPI/EcommerceAPI.csproj",
+        "projectUniqueName": "/home/joselomart/Documentos/GitHub/EcommerceAPI/EcommerceAPI.csproj",
         "projectName": "EcommerceAPI",
-        "projectPath": "/home/joselomart/EcommerceAPI/EcommerceAPI.csproj",
+        "projectPath": "/home/joselomart/Documentos/GitHub/EcommerceAPI/EcommerceAPI.csproj",
         "packagesPath": "/home/joselomart/.nuget/packages/",
-        "outputPath": "/home/joselomart/EcommerceAPI/obj/",
+        "outputPath": "/home/joselomart/Documentos/GitHub/EcommerceAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/joselomart/.nuget/NuGet/NuGet.Config"

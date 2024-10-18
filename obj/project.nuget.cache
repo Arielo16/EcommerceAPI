@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b/bihMlV43a+HvNCBtsnk0u0FoqvcPHarUQ/mSc2GL3GXBb7Z7/LR4r8BjycdaI7JqlYBjJS/am1P6driJCndw==",
+  "dgSpecHash": "DNTYHl2sQgupOX+lW+G2A6I/a5CuAzD3f36m1vq5Bue63OBhGba17DSrRWjg6EFYhp+ZZoSJ7aTxXIwaOUjHFQ==",
   "success": true,
-  "projectFilePath": "/home/joselomart/EcommerceAPI/EcommerceAPI.csproj",
+  "projectFilePath": "/home/joselomart/Documentos/GitHub/EcommerceAPI/EcommerceAPI.csproj",
   "expectedPackageFiles": [
     "/home/joselomart/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/joselomart/.nuget/packages/microsoft.aspnetcore.openapi/7.0.0/microsoft.aspnetcore.openapi.7.0.0.nupkg.sha512",
